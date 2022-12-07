@@ -1,0 +1,16 @@
+{
+  "configurations": [    
+    {
+      "name": "Launch With Input Redirection",
+      "preLaunchTask": "build",
+      "request": "launch",
+      "program":"${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args":[
+        "<",
+        "${fileDirname}\\${fileBasenameNoExtension}.input"
+      ],
+      "type":"cppdbg",
+      "cwd":"."
+    }
+  ]
+}
