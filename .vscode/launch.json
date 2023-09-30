@@ -1,16 +1,56 @@
 {
-  "configurations": [    
+  "configurations": [
     {
       "name": "Launch With Input Redirection",
-      "preLaunchTask": "build",
+      "preLaunchTask": "cppbuild",
       "request": "launch",
-      "program":"${fileDirname}\\${fileBasenameNoExtension}.exe",
-      "args":[
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": [
         "<",
         "${fileDirname}\\${fileBasenameNoExtension}.input"
       ],
-      "type":"cppdbg",
-      "cwd":"."
+      "type": "cppdbg",
+      "cwd": ".",
+      "pipeTransport": {
+        "debuggerPath": "/mingw64/bin/gdb",
+        "pipeProgram": "c:\\devtools\\msys64\\usr\\bin\\bash.exe",
+        "pipeArgs": [
+          "-c"
+        ],
+        "pipeCwd": ""
+      }
+    },
+    {
+      "name": "Launch CPP Normal",
+      "preLaunchTask": "cppbuild",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "type": "cppdbg",
+      "cwd": ".",
+      "pipeTransport": {
+        "debuggerPath": "/mingw64/bin/gdb",
+        "pipeProgram": "c:\\devtools\\msys64\\usr\\bin\\bash.exe",
+        "pipeArgs": [
+          "-c"
+        ],
+        "pipeCwd": ""
+      }
+    },
+    {
+      "name": "Launch C Normal",
+      "preLaunchTask": "cbuild",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "type": "cppdbg",
+      "cwd": ".",
+      "pipeTransport": {
+        "debuggerPath": "/mingw64/bin/gdb",
+        "pipeProgram": "c:\\devtools\\msys64\\usr\\bin\\bash.exe",
+        "pipeArgs": [
+          "-c"
+        ],
+        "pipeCwd": ""
+      }
     }
   ]
 }

@@ -2,7 +2,7 @@
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "build",
+      "label": "cppbuild",
       "command": "C:\\devtools\\msys64\\mingw64\\bin\\g++.exe",
       "args": [
         "-fdiagnostics-color=always",
@@ -21,7 +21,32 @@
       "group": {
         "kind": "build",
         "isDefault": true        
-      }
+      },
+
+    },
+    {
+      "type": "cppbuild",
+      "label": "cbuild",
+      "command": "C:\\devtools\\msys64\\mingw64\\bin\\gcc.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-std=c11",
+        "-g",
+        "${fileDirname}\\${fileBasenameNoExtension}.c",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true        
+      },
+
     }
   ],
   "version": "2.0.0"
